@@ -44,8 +44,9 @@ Canary::App.mailer :hit_notifier do
     from destination
     to   destination
     subject the_subject
-    locals :user_agent => info['HTTP_USER_AGENT'], :remote_addr => info['REMOTE_ADDR']
+    locals :user_agent => info['HTTP_USER_AGENT'], :remote_addr => info['REMOTE_ADDR'], :request_uri => info['REQUEST_URI']
     via     :smtp
+    content_type 'text/html'
     render  'hit_email'
   end
 end

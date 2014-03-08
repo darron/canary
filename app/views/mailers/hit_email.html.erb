@@ -1,0 +1,6 @@
+<table>
+<tr valign="top"><td><strong>Date:</strong></td><td><%= DateTime.now.to_s %></td></tr>
+<tr valign="top"><td><strong>Request URI:</strong></td><td><a href="<%= request_uri %>"><%= request_uri %></a></td></tr>
+<tr valign="top"><td><strong>User Agent:</strong></td><td><%= user_agent %></td></tr>
+<tr valign="top"><td><strong>IP Address:</strong></td><td><%= remote_addr %></td></tr>
+</table>
