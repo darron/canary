@@ -1,6 +1,6 @@
 Canary::App.controllers :page do
 
-  get :index, :map => '/hit/:page_name' do
+  get :index, :map => "/#{ENV['BASE_CANARY_PATH']}/:page_name" do
     @page_name = params[:page_name]
     deliver(:hit_notifier, :hit_email, "#{@page_name} was Hit", ENV['EMAIL_DESTINATION'])
     render 'index'
