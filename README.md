@@ -41,3 +41,4 @@ Change EMAIL_DESTINATION to it and you're good to go.
 ## Todo
 
 1. Add ability to notify a different email address on the fly: '/BASE_CANARY_PATH/path/email@example.com' - possibly very dangerous - need to secure so it doesn't become a spam fest.
+2. If `/hit/page.{gif,jpg,png,js}` is requested, then return proper type of file with proper headers.
