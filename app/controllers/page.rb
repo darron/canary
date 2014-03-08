@@ -2,7 +2,7 @@ Canary::App.controllers :page do
 
   get :index, :map => "/#{ENV['BASE_CANARY_PATH']}/:page_name" do
     @page_name = params[:page_name]
-    info = request.env
+    info = request
     deliver(:hit_notifier, :hit_email, "#{@page_name} was Hit", ENV['EMAIL_DESTINATION'], info) unless ENV['STOP_ALL_EMAIL']
     render 'index'
   end
