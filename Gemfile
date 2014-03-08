@@ -6,6 +6,9 @@ source 'https://rubygems.org'
 # Server requirements
 # gem 'thin' # or mongrel
 # gem 'trinidad', :platform => 'jruby'
+gem 'unicorn'
+
+gem 'foreman'
 
 # Optional JSON codec (faster performance)
 # gem 'oj'
