@@ -32,7 +32,12 @@ SENDGRID_PASSWORD
 STOP_ALL_EMAIL # Set this and all email stops being sent.
 ```
 
+## Push notifications
+
+To get the simplest possible push notifications - download the [Boxcar app](https://boxcar.io/client) and use the bxc.io email address you get with it.
+
+Change EMAIL_DESTINATION to it and you're good to go.
+
 ## Todo
 
 1. Add ability to notify a different email address on the fly: '/BASE_CANARY_PATH/path/email@example.com' - possibly very dangerous - need to secure so it doesn't become a spam fest.
-2. Maybe add different types of notification - push notifications.
