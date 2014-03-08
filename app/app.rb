@@ -53,6 +53,10 @@ module Canary
     #   end
     #
 
+    get '/' do
+      'Nothing to see here.'
+    end
+
     ##
     # You can manage errors like:
     #
