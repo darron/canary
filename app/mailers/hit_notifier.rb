@@ -40,10 +40,11 @@
 #
 
 Canary::App.mailer :hit_notifier do
-  email :hit_email do |the_subject, destination|
+  email :hit_email do |the_subject, destination, info|
     from destination
     to   destination
     subject the_subject
+    locals :user_agent => info['HTTP_USER_AGENT'], :remote_addr => info['REMOTE_ADDR']
     via     :smtp
     render  'hit_email'
   end
