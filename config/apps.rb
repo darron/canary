@@ -30,6 +30,15 @@ Padrino.configure_apps do
   set :session_secret, '6f5289acc098fd0bd2b533413ca22c146d91cf9836342c163ce39122d16be86b'
   set :protection, :except => :path_traversal
   set :protect_from_csrf, true
+
+  set :delivery_method, :smtp => {
+    :address         => 'smtp.sendgrid.net',
+    :port            => '587',
+    :user_name       => ENV['SENDGRID_USERNAME'],
+    :password        => ENV['SENDGRID_PASSWORD'],
+    :authentication  => :plain, # :plain, :login, :cram_md5, no auth by default
+    :domain          => "heroku.com" # the HELO domain provided by the client to the server
+  }
 end
 
 # Mounts the core application for this project
