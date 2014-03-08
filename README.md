@@ -29,7 +29,6 @@ EMAIL_DESTINATION="email@example.com"
 BASE_CANARY_PATH="hit" # or change it to something else.
 SENDGRID_USERNAME # heroku addons:add sendgrid:starter
 SENDGRID_PASSWORD
-DATABASE_URL
 STOP_ALL_EMAIL # Set this and all email stops being sent.
 ```
 
@@ -37,4 +36,3 @@ STOP_ALL_EMAIL # Set this and all email stops being sent.
 
 1. Add ability to notify a different email address on the fly: '/BASE_CANARY_PATH/path/email@example.com' - possibly very dangerous - need to secure so it doesn't become a spam fest.
 2. Maybe add different types of notification - push notifications.
-3. Remove all ActiveRecord / PG dependancies.
