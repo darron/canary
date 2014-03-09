@@ -1,8 +1,23 @@
+require 'multi_json'
 Canary::App.controllers :page do
 
   get :index, :map => "/#{ENV['BASE_CANARY_PATH']}/:page_name" do
     @page_name = params[:page_name]
     info = request
+    deliver(:hit_notifier, :hit_email, "#{@page_name} was Hit", ENV['EMAIL_DESTINATION'], info) unless ENV['STOP_ALL_EMAIL']
+    render 'index'
+  end
+
+  post :post, :map => "/#{ENV['BASE_CANARY_PATH']}/:page_name" do
+    @page_name = params[:page_name]
+    info = request
+    case content_type
+    when :json
+      data = MultiJson.load(request.body.read)
+    else
+      data = request.body.read
+    end
+    info['posted_data'] = data
     deliver(:hit_notifier, :hit_email, "#{@page_name} was Hit", ENV['EMAIL_DESTINATION'], info) unless ENV['STOP_ALL_EMAIL']
     render 'index'
   end
