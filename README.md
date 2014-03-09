@@ -1,6 +1,6 @@
 # Canary
 
-Simple web app to notify you via email anytime somebody hits a specific page.
+Simple web app to notify you via email or push notification anytime somebody hits a specific page.
 
 ## Purpose
 
@@ -17,7 +17,7 @@ http://website.address.example.com/hit/trythis
 http://website.address.example.com/hit/and-this-as-well
 ```
 
-Anytime one of those urls is hit, `EMAIL_DESTINATION` will get an email.
+Anytime one of those urls is hit, `EMAIL_DESTINATION` will get an email. Any posted data will be included in the email.
 
 ## Heroku environment variables
 
@@ -42,3 +42,6 @@ Change EMAIL_DESTINATION to it and you're good to go.
 
 1. Add ability to notify a different email address on the fly: '/BASE_CANARY_PATH/path/email@example.com' - possibly very dangerous - need to secure so it doesn't become a spam fest.
 2. If `/hit/page.{gif,jpg,png,js}` is requested, then return proper type of file with proper headers.
+3. Only email every INTERVAL seconds - protects from email flood/DoS.
+4. Keep count of hits from page-IP combo. (Maybe something simple like Redis.)
+5. Get some more IP data - location related.
