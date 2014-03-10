@@ -53,7 +53,7 @@ module Canary
     #
 
     get '/' do
-      'Nothing to see here.'
+      render 'page/index'
     end
 
     ##

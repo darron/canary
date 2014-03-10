@@ -1,1 +1,35 @@
-This is the index page for <%= @page_name %>.
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canary</title>
+    <link rel="stylesheet" href="stylesheets/app.css" />
+    <!--[if lt IE 9]>
+      <script src="javascripts/ie.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="stylesheets/ie.css" />
+    <![endif]-->
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-5 columns">
+        <img src="images/canary.png" alt="Canary" />
+      </div>
+      <div class="large-7 columns">
+        <h1>Canary</h1>
+        <h2>Lets you know when somebody hits your URLs.</h2>
+        <ul>
+          <li>Simple no-config webhook endpoint.</li>
+          <li>Website visitor notification.</li>
+          <li>Timed events notification.</li>
+          <li>Works on <a href="http://www.heroku.com">Heroku</a>.</li>
+          <li>Built with <a href="http://www.padrinorb.com/">Padrino</a>.</li>
+        </ul>
+        <p>
+          Get your own at <a href="https://github.com/darron/canary">https://github.com/darron/canary</a>.
+        </p>
+      </div>
+    </div>
+    <script src="javascripts/rem.min.js" type="text/javascript"></script>
+  </body>
+</html>
