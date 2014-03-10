@@ -4,6 +4,8 @@ RUN mkdir /srv/www
 ADD . /srv/www
 RUN cd /srv/www; bundle install --deployment
 
+WORKDIR /srv/www
+
 EXPOSE 3000
 
-CMD cd /srv/www; bundle exec padrino start --host 0.0.0.0
+CMD bundle exec padrino start --host 0.0.0.0
