@@ -1,4 +1,4 @@
-FROM octohost/ruby-1.9
+FROM octohost/ruby-2.0
 
 RUN mkdir /srv/www
 ADD . /srv/www
