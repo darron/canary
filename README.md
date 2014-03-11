@@ -19,9 +19,9 @@ http://website.address.example.com/hit/and-this-as-well
 
 Anytime one of those urls is hit, `EMAIL_DESTINATION` will get an email. Any posted data will be included in the email.
 
-## Heroku environment variables
+## Environment variables
 
-These are needed to operate on Heroku:
+These are needed to operate:
 
 ```
 SESSION_SECRET # output of: padrino rake secret
@@ -31,6 +31,8 @@ SENDGRID_USERNAME # heroku addons:add sendgrid:starter
 SENDGRID_PASSWORD
 STOP_ALL_EMAIL # Set this and all email stops being sent.
 ```
+
+Canary works with [Heroku](http://www.heroku.com) and on [octohost](http://www.octohost.io) with the included Dockerfile.
 
 ## Push notifications
 
